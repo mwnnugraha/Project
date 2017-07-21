@@ -52,8 +52,8 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                  <li>
-                        <a class="page-scroll" href="{{ route('login') }}">Log In</a>
+                    <li>
+                        <a class="page-scroll" href="{{ url('/login') }}">Log In</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="{{url('/prestasi')}}">Prestasi</a>
@@ -64,8 +64,17 @@
                     <li>
                         <a class="page-scroll" href="{{url('/contact')}}">contact</a>
                     </li>
-                   
+                     <li>
+                       <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
 
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
